@@ -1,9 +1,9 @@
 <template>
-  <div class="flex justify-center bg-gray-100">
-    <div class="w-4/5 min-h-screen">
+  <div class="flex justify-center h-auto min-h-screen bg-gray-100">
+    <div class="w-4/5">
       <Header />
       <div class="flex">
-        <router-view class="w-full h-80" />
+        <router-view class="w-full mr-4" />
         <Categories />
       </div>
     </div>

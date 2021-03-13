@@ -16,11 +16,13 @@ export default {
     getCategoryPosts,
   },
   data: () => ({ posts: [] }),
+
   computed: {
     categoryName() {
       return this.$store.getters.categoryName;
     },
   },
+
   watch: {
     categoryName() {
       this.posts = [];

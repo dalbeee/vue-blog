@@ -1,10 +1,10 @@
 <template>
   <div class="flex justify-center">
-    <div class="relative">
+    <div class="">
       <div class="py-4 text-4xl font-semibold text-gray-700">
         {{ post.title }}
       </div>
-      <div class="py-4 break-words" v-html="content"></div>
+      <div class="py-4 break-words" h-auto v-html="content"></div>
     </div>
   </div>
 </template>
