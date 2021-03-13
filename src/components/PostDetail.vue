@@ -21,8 +21,6 @@ export default {
   data: () => ({
     post: {},
     content: "",
-    testString: "# hello",
-    // testParsed,
   }),
   methods: {
     getPost,

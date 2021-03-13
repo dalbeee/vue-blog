@@ -2,7 +2,7 @@
   <div class="flex justify-center bg-gray-100">
     <div class="w-4/5 min-h-screen">
       <Header />
-      <router-view></router-view>
+      <router-view />
     </div>
   </div>
 </template>
@@ -17,7 +17,6 @@ export default defineComponent({
   name: "App",
   components: {
     Header,
-    // Posts,
   },
 });
 </script>
