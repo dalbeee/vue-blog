@@ -15,14 +15,10 @@
 </template>
 
 <script>
-// const headerRoutes = [
-//   { path: "/", component: Posts },
-//   { path: "/posts", component: Header },
-// ];
-
 import { useRouter } from "vue-router";
 
 export default {
+  // INFO setup 메서드에서 router this 에 접근한다
   setup: () => {
     const router = useRouter();
     console.log(router);
