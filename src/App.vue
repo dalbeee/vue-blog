@@ -1,0 +1,21 @@
+<template>
+  <div class="flex justify-center bg-gray-100">
+    <div class="w-4/5 min-h-screen">
+      <Header />
+      <router-view></router-view>
+    </div>
+  </div>
+</template>
+
+<script>
+import { defineComponent } from "vue";
+import Header from "./components/Header.vue";
+
+export default defineComponent({
+  name: "App",
+  components: {
+    Header,
+    // Posts,
+  },
+});
+</script>
