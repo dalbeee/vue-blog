@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import "@fortawesome/fontawesome-free/js/all.js";
+
 import { defineComponent } from "vue";
 import Header from "./components/Header.vue";
 

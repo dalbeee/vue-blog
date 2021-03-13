@@ -20,7 +20,6 @@
         </div>
       </div>
     </router-link>
-    <router-view> </router-view>
   </div>
 </template>
 
