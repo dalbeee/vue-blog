@@ -27,7 +27,6 @@ export default {
   },
   created() {
     this.getPost(this.$route.params.slug).then((res) => {
-      console.log(res);
       this.post = res;
       this.content = marked(res.content);
     });

@@ -4,3 +4,9 @@ export interface IPost {
   id: number;
   created_at?: number;
 }
+
+export interface ICategory {
+  name: string;
+  type: string;
+  posts: number;
+}
