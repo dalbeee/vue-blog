@@ -13,8 +13,11 @@
 import { getPost } from "../util/axios";
 import marked from "marked";
 
+import env from "../config";
+const host = env.host;
+
 marked.setOptions({
-  baseUrl: "http://localhost:1337",
+  baseUrl: host,
 });
 
 export default {

@@ -27,13 +27,16 @@
 const regexStr = /(!\[.*\)\s)|(#\s)/g;
 const regexImg = /[^\(]+\)/g;
 
+import env from "../config";
+const host = env.host;
+
 export default {
   name: "PostCard",
   props: ["post"],
   computed: {
     parsedImg: ({ post }) => {
       const result = post.content.match(regexImg)[0].slice(0, -1);
-      return "http://localhost:1337" + result;
+      return `${host}${result}`;
     },
     parsedContent: ({ post }) => {
       return post.content

@@ -1,15 +1,16 @@
 import axios from "axios";
 import { ICategory } from "..";
+import env from "../config";
+
+const host = env.host;
 
 export const getPost = async (slug: string) => {
-  const { data } = await axios.get(`http://localhost:1337/posts?slug=${slug}`);
+  const { data } = await axios.get(`${host}/posts?slug=${slug}`);
   return data[0];
 };
 
 export const getPosts = async () => {
-  const { data } = await axios.get(
-    "http://localhost:1337/posts?_sort=created_at:desc"
-  );
+  const { data } = await axios.get(`${host}/posts?_sort=created_at:desc`);
   return data;
 };
 
@@ -21,16 +22,14 @@ export const getCategories = async () => {
   try {
     isLoading = true;
 
-    const { data: categoryNonePosts } = await axios.get(
-      "http://localhost:1337/posts"
-    );
+    const { data: categoryNonePosts } = await axios.get(`${host}/posts`);
     categories.push({
       type: "",
       posts: categoryNonePosts.length,
       name: "all",
     });
 
-    const { data } = await axios.get("http://localhost:1337/categories");
+    const { data } = await axios.get(`${host}/categories`);
     data.map((category: any) =>
       categories.push({
         type: category.type,
@@ -55,7 +54,7 @@ export const getCategoryPosts = async (categoryName: string) => {
   try {
     isLoading = true;
     const { data: posts } = await axios.get(
-      `http://localhost:1337/posts?_sort=created_at:desc&${categoryString}`
+      `${host}/posts?_sort=created_at:desc&${categoryString}`
     );
 
     return { posts, isLoading, error };
