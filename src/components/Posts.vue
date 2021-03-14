@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 auto-rows-min">
+  <div class="md:grid md:grid-cols-2 md:auto-rows-min">
     <postCard v-for="post in posts" :key="post.id" :post="post" />
   </div>
 </template>

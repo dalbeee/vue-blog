@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center h-auto min-h-screen bg-gray-100">
-    <div class="w-4/5">
+    <div class="w-10/12 lg:w-4/5 xl:w-3/5">
       <Header />
       <div class="flex">
         <router-view class="w-full mr-4" />
