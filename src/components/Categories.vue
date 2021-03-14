@@ -28,6 +28,7 @@ export default {
     getCategories,
     setCategoryName(categoryName) {
       this.$store.commit("setCategoryName", categoryName);
+      this.$router.push("/");
     },
   },
   data: () => ({ categories: [] }),
