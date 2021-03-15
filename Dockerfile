@@ -4,7 +4,7 @@ WORKDIR /app
 RUN npm init @vitejs/app . --template vue
 COPY ./package.json .
 RUN npm install
-RUN vite build
+RUN npm run build
 
 FROM nginx:1.19.8-alpine
 RUN mkdir -p /app
