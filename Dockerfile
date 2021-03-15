@@ -2,7 +2,8 @@ FROM node:alpine AS build
 RUN mkdir -p /app
 WORKDIR /app
 COPY ./package.json .
-RUN npm install && npm run build
+RUN npm install
+RUN npm run build
 
 FROM nginx:1.19.8-alpine
 RUN mkdir -p /app
