@@ -1,6 +1,7 @@
 FROM node:alpine AS build
 RUN mkdir -p /app
 WORKDIR /app
+RUN npm init @vitejs/app
 COPY ./package.json .
 RUN npm install
 RUN vite build
