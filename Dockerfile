@@ -3,7 +3,7 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY ./package.json .
 RUN npm install
-RUN npm run build
+RUN vite build
 
 FROM nginx:1.19.8-alpine
 RUN mkdir -p /app
