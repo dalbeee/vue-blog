@@ -31,12 +31,8 @@ import { getCategories } from "../util/axios";
 export default {
   methods: {
     getCategories,
-    setActive() {
-      console.log("heo");
-    },
     setCategoryName(categoryName) {
       this.$store.commit("setCategoryName", categoryName);
-      console.log(this.$store.state.categoryName);
       this.$router.push("/");
     },
   },
