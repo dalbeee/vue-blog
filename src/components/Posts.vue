@@ -19,7 +19,8 @@ export default {
 
   computed: {
     categoryName() {
-      return this.$store.getters.categoryName;
+      const result = this.$store.state.categoryName;
+      return result;
     },
   },
 
@@ -34,7 +35,7 @@ export default {
     },
   },
 
-  created() {
+  mounted() {
     this.getCategoryPosts(this.categoryName).then((res) => {
       res.posts.map((r) => {
         this.posts.push(r);
