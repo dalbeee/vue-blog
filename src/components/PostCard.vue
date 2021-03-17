@@ -15,7 +15,7 @@
             {{ parsedContent }}
           </div>
           <div className="pb-2 text-sm text-right text-gray-500">
-            {{ post.created_at }}
+            {{ post.createdAt }}
           </div>
         </div>
       </div>
@@ -27,8 +27,7 @@
 const regexStr = /(!\[.*\)\s)|(#\s)/g;
 const regexImg = /[^\(]+\)/g;
 
-import env from "../config";
-const host = env.host;
+const URL = import.meta.env.VITE_URL;
 
 export default {
   name: "PostCard",
@@ -36,7 +35,7 @@ export default {
   computed: {
     parsedImg: ({ post }) => {
       const result = post.content.match(regexImg)[0].slice(0, -1);
-      return `${host}${result}`;
+      return `${URL}${result}`;
     },
     parsedContent: ({ post }) => {
       return post.content

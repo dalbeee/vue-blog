@@ -1,17 +1,27 @@
 import axios from "axios";
 import { ICategory } from "..";
-import env from "../config";
-
-const host = env.host;
+const URL = import.meta.env.VITE_URL;
 
 export const getPost = async (slug: string) => {
-  const { data } = await axios.get(`${host}/posts?slug=${slug}`);
-  return data[0];
+  try {
+    const { data } = await axios.get(`${URL}/posts?slug=${slug}`);
+    return data[0];
+  } catch (error) {
+    console.log(error);
+    throw new Error("host error");
+  }
 };
 
 export const getPosts = async () => {
-  const { data } = await axios.get(`${host}/posts?_sort=created_at:desc`);
-  return data;
+  try {
+    const { data } = await axios.get(`${URL}/posts?_sort=createdAt:desc`);
+
+    return data;
+  } catch (error) {
+    console.log(error);
+
+    throw new Error("host error");
+  }
 };
 
 export const getCategories = async () => {
@@ -22,14 +32,14 @@ export const getCategories = async () => {
   try {
     isLoading = true;
 
-    const { data: categoryNonePosts } = await axios.get(`${host}/posts`);
+    const { data: categoryNonePosts } = await axios.get(`${URL}/posts`);
     categories.push({
       type: "",
       posts: categoryNonePosts.length,
       name: "all",
     });
 
-    const { data } = await axios.get(`${host}/categories`);
+    const { data } = await axios.get(`${URL}/categories`);
     data.map((category: any) =>
       categories.push({
         type: category.type,
@@ -49,12 +59,13 @@ export const getCategoryPosts = async (categoryName: string) => {
   let error = false;
   let isLoading = false;
 
-  const categoryString = categoryName && `category.type=${categoryName}`;
+  const categoryString =
+    categoryName !== "all" ? `categories.type=${categoryName}` : ``;
 
   try {
     isLoading = true;
     const { data: posts } = await axios.get(
-      `${host}/posts?_sort=created_at:desc&${categoryString}`
+      `${URL}/posts?_sort=createdAt:desc&${categoryString}`
     );
 
     return { posts, isLoading, error };

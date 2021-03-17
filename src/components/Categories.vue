@@ -4,13 +4,14 @@
       <div class="mb-4 text-xl font-semibold text-gray-400">카테고리</div>
       <div
         class="font-semibold text-gray-700"
+        :class="setActive === category.type ? bg - gray - 300 : ''"
         v-for="category in categories"
         :category="category"
         :key="category.type"
       >
         <button
           class="flex justify-start p-2 transform border-gray-500 hover:scale-110"
-          @click="setCategoryName(category.type)"
+          @click="setCategoryName(category.name)"
         >
           <span class="mr-4">{{ category.name }}</span>
           <i>{{ category.posts }}</i>
@@ -26,12 +27,16 @@ import { getCategories } from "../util/axios";
 export default {
   methods: {
     getCategories,
+    setActive() {
+      console.log("heo");
+    },
     setCategoryName(categoryName) {
       this.$store.commit("setCategoryName", categoryName);
+      console.log(this.$store.state.categoryName);
       this.$router.push("/");
     },
   },
-  data: () => ({ categories: [] }),
+  data: () => ({ categories: [], setActive: "" }),
   created() {
     this.getCategories().then((res) => {
       res.categories.map((r) => {

@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
 
 @layer base {
   h1 {
@@ -14,6 +20,9 @@
   }
   a {
     @apply underline;
+  }
+  p {
+    @apply py-2 text-lg;
   }
 }
 

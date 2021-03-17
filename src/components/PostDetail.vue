@@ -4,7 +4,7 @@
       <div class="py-4 text-4xl font-semibold text-gray-700">
         {{ post.title }}
       </div>
-      <div class="py-4 break-words" h-auto v-html="content"></div>
+      <div class="py-4 text-gray-700 break-words" h-auto v-html="content"></div>
     </div>
   </div>
 </template>
@@ -13,11 +13,10 @@
 import { getPost } from "../util/axios";
 import marked from "marked";
 
-import env from "../config";
-const host = env.host;
+const URL = import.meta.env.VITE_URL;
 
 marked.setOptions({
-  baseUrl: host,
+  baseUrl: URL,
 });
 
 export default {
