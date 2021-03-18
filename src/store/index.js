@@ -4,7 +4,7 @@ const URL = import.meta.env.VITE_URL;
 const store = createStore({
   state() {
     return {
-      defaultThumbnail: `${URL}/uploads/photo_1460819739742_50e4486578f5_59105b0652.jpg`,
+      defaultThumbnail: `${URL}/uploads/thumbnail_photo_1460819739742_50e4486578f5_59105b0652.jpg`,
       categoryName: "all",
     };
   },
