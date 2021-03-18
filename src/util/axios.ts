@@ -24,6 +24,16 @@ export const getPosts = async () => {
   }
 };
 
+export const testCall = async () => {
+  let error = false;
+  let isLoading = false;
+  const categories: ICategory[] = [];
+  const ax1 = () => axios.get(`${URL}/posts`);
+  const ax2 = () => axios.get(`${URL}/categories`);
+  const result = await axios.all([ax1(), ax2()]);
+  console.log(result);
+};
+
 export const getCategories = async () => {
   let error = false;
   let isLoading = false;
@@ -32,10 +42,10 @@ export const getCategories = async () => {
   try {
     isLoading = true;
 
-    const { data: categoryNonePosts } = await axios.get(`${URL}/posts`);
+    const { data: allPosts } = await axios.get(`${URL}/posts`);
     categories.push({
       type: "",
-      posts: categoryNonePosts.length,
+      posts: allPosts.length,
       name: "all",
     });
 

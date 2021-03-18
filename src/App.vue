@@ -17,18 +17,11 @@ import { defineComponent } from "vue";
 import Header from "./components/Header.vue";
 import Categories from "./components/Categories.vue";
 
-import { useStore } from "vuex";
-
 export default defineComponent({
   name: "App",
   components: {
     Header,
     Categories,
-  },
-  setup() {
-    const store = useStore();
-
-    return { store };
   },
 });
 </script>

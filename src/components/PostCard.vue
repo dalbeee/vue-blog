@@ -3,7 +3,7 @@
     <router-link :to="`/post/${post.slug}`" class="no-underline">
       <div className="flex flex-col items-center justify-center">
         <div className="mb-2">
-          <img :src="parsedImg" alt="" className="object-cover w-full h-32" />
+          <img :src="thumbnail" alt="" className="object-cover w-full h-32" />
         </div>
         <div className="px-2 text-gray-400 ">
           <div className="font-semibold text-gray-700 truncate">
@@ -25,7 +25,6 @@
 
 <script>
 const regexStr = /(!\[.*\)\s)|(#\s)/g;
-const regexImg = /[^\(]+\)/g;
 
 const URL = import.meta.env.VITE_URL;
 
@@ -33,10 +32,7 @@ export default {
   name: "PostCard",
   props: ["post"],
   computed: {
-    parsedImg: ({ post }) => {
-      const result = post.content.match(regexImg)[0].slice(0, -1);
-      return `${URL}${result}`;
-    },
+    thumbnail: ({ post }) => `${URL}${post.thumbnail}`,
     parsedContent: ({ post }) => {
       return post.content
         .replace(regexStr, "")
