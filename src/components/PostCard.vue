@@ -3,7 +3,13 @@
     <router-link :to="`/post/${post.slug}`" class="no-underline">
       <div className="flex flex-col items-center justify-center">
         <div className="mb-2">
-          <img :src="thumbnail" alt="" className="object-cover w-full h-32" />
+          <img
+            v-if="thumbnail"
+            :src="thumbnail"
+            alt=""
+            className="object-cover overflow-hidden w-full h-32"
+          />
+          <img v-else :src="this.$store.state.defaultThumbnail" />
         </div>
         <div className="px-2 text-gray-400 ">
           <div className="font-semibold text-gray-700 truncate">
@@ -32,7 +38,7 @@ export default {
   name: "PostCard",
   props: ["post"],
   computed: {
-    thumbnail: ({ post }) => `${URL}${post.thumbnail}`,
+    thumbnail: ({ post }) => post.thumbnail && `${URL}${post.thumbnail}`,
     parsedContent: ({ post }) => {
       return post.content
         .replace(regexStr, "")
