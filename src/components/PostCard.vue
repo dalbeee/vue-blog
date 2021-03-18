@@ -9,7 +9,11 @@
             alt=""
             className="object-cover overflow-hidden w-full h-32"
           />
-          <img v-else :src="this.$store.state.defaultThumbnail" />
+          <img
+            v-else
+            :src="this.$store.state.defaultThumbnail"
+            className="object-cover overflow-hidden w-full h-32"
+          />
         </div>
         <div className="px-2 text-gray-400 ">
           <div className="font-semibold text-gray-700 truncate">

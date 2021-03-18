@@ -1,10 +1,10 @@
 import { createStore } from "vuex";
-const URL = import.meta.env.VITE_URL;
+import defaultThumbnail from "../assets/thumbnail_default.jpg";
 
 const store = createStore({
   state() {
     return {
-      defaultThumbnail: `${URL}/uploads/thumbnail_default.jpg`,
+      defaultThumbnail: defaultThumbnail,
       categoryName: "all",
     };
   },
