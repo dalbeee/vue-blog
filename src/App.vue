@@ -23,5 +23,8 @@ export default defineComponent({
     Header,
     Categories,
   },
+  created() {
+    document.title = import.meta.env.VITE_APP_TITLE;
+  },
 });
 </script>

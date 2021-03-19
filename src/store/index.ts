@@ -10,7 +10,7 @@ const store = createStore({
   },
 
   mutations: {
-    setCategoryName(state, categoryName) {
+    setCategoryName(state: any, categoryName) {
       state.categoryName = categoryName;
     },
   },
