@@ -3,7 +3,7 @@
     <div class="w-10/12 lg:w-4/5 xl:w-3/5">
       <Header />
       <div class="flex">
-        <router-view class="w-full mr-4" />
+        <router-view class="w-full" />
         <Categories />
       </div>
     </div>

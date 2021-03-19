@@ -1,7 +1,9 @@
 <template>
-  <div className="mx-4 mb-4 overflow-hidden bg-gray-200 rounded-t-2xl w-4/5">
+  <div
+    className="md:mr-4 mb-4 overflow-hidden bg-gray-200 rounded-t-2xl lg:w-4/5"
+  >
     <router-link :to="`/post/${post.slug}`" class="no-underline">
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center ">
         <div className="mb-2">
           <img
             v-if="thumbnail"
