@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden pt-20 sm:block w-60">
+  <div class="hidden w-full pt-20 ml-4 sm:block">
     <div class="px-2">
       <div class="mb-4 text-xl font-semibold text-gray-400">카테고리</div>
       <div
