@@ -1,5 +1,7 @@
 <template>
-  <div class="gap-4 md:grid md:grid-cols-2 md:auto-rows-min lg:gap-8">
+  <div
+    class="w-full gap-x-4 md:grid md:grid-cols-2 md:auto-rows-min lg:gap-x-8"
+  >
     <postCard v-for="post in posts" :key="post.id" :post="post" />
   </div>
 </template>

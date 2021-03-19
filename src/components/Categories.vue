@@ -1,9 +1,9 @@
 <template>
-  <div class="hidden w-full pt-20 ml-4 sm:block">
+  <div class="hidden pt-20 ml-4 w-80 sm:block">
     <div class="px-2">
       <div class="mb-4 text-xl font-semibold text-gray-400">카테고리</div>
       <div
-        class="font-semibold text-gray-700"
+        class=""
         v-for="category in categories"
         :category="category"
         :key="category.type"
@@ -17,7 +17,9 @@
           "
           @click="setCategoryName(category.name)"
         >
-          <span class="mr-4">{{ category.name }}</span>
+          <span class="mr-4 text-sm font-semibold text-gray-700">{{
+            category.name
+          }}</span>
           <i>{{ category.posts }}</i>
         </button>
       </div>
