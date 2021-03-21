@@ -17,7 +17,7 @@
             className="object-cover overflow-hidden w-full h-32"
           />
         </div>
-        <div className="px-2 text-gray-400 ">
+        <div className="px-2 text-gray-400 w-full ">
           <div className="font-semibold text-gray-700 truncate">
             {{ post.title }}
           </div>

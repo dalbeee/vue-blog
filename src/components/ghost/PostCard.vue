@@ -17,14 +17,14 @@
             className="object-cover overflow-hidden w-full h-32"
           />
         </div>
-        <div className="px-2 text-gray-400 ">
-          <div className="font-semibold text-gray-700 truncate">
+        <div className="px-2 text-gray-400 w-full ">
+          <div className="font-semibold text-gray-700  truncate">
             {{ post.title }}
           </div>
           <div
             className="h-16 overflow-hidden leading-tight text-gray-400 break-words whitespace-pre-wrap "
           >
-            {{ parsedContent }}
+            {{ post.excerpt }}
           </div>
           <div className="pb-2 text-sm text-right text-gray-500">
             {{ post.created_at }}
@@ -43,11 +43,5 @@ const URL = import.meta.env.VITE_URL;
 export default {
   name: "PostCard",
   props: ["post"],
-  computed: {
-    // thumbnail: ({ post }) => post.thumbnail && `${URL}${post.thumbnail}`,
-    parsedContent: ({ post }) => {
-      return post.excerpt;
-    },
-  },
 };
 </script>
