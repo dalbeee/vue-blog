@@ -4,7 +4,6 @@
       <Header />
       <div class="flex">
         <router-view />
-        <Categories />
       </div>
     </div>
   </div>
@@ -15,13 +14,11 @@ import "@fortawesome/fontawesome-free/js/all.js";
 
 import { defineComponent } from "vue";
 import Header from "./components/Header.vue";
-import Categories from "./components/Categories.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     Header,
-    Categories,
   },
   created() {
     document.title = import.meta.env.VITE_APP_TITLE;

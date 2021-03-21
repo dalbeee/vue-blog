@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { getCategories } from "../util/axios";
+import { getCategories } from "../../util/axios";
 
 export default {
   methods: {
