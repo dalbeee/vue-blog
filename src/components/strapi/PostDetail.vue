@@ -1,16 +1,15 @@
 <template>
   <div class="flex justify-center">
-    <div class="">
-      <div class="py-4 text-4xl font-semibold text-gray-700">
-        {{ post.title }}
-      </div>
-      <div class="py-4 text-gray-700 break-words" h-auto v-html="content"></div>
-    </div>
+    <div
+      class="py-4 text-gray-700 break-words markdown"
+      h-auto
+      v-html="content"
+    ></div>
   </div>
 </template>
 
 <script>
-import { getPost } from "../util/axios";
+import { getPost } from "../../util/axios";
 import marked from "marked";
 
 const URL = import.meta.env.VITE_URL;

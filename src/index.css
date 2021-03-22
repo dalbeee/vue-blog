@@ -90,7 +90,7 @@
   }
 
   .markdown > kbd {
-    @apply inline-block px-1 font-mono text-xs font-normal align-middle border rounded shadow py-05;
+    @apply inline-block px-1 font-mono text-xs font-normal align-middle border rounded shadow;
   }
 
   .markdown > table {
@@ -109,9 +109,4 @@
   .markdown > .highlight pre {
     @apply bg-gray-100 !important;
   }
-}
-
-object {
-  display: block;
-  vertical-align: middle;
 }

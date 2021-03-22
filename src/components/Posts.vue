@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import PostCard from "./PostCard.vue";
+import PostCard from "./strapi/PostCard.vue";
 import { getPosts, getCategoryPosts } from "../util/axios";
 
 export default {
