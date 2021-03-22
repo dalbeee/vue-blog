@@ -1,5 +1,5 @@
 <template>
-  <router-view class="w-full" />
+  <router-view class="w-full markdown" />
   <categories />
 </template>
 
