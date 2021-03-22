@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Posts from "../components/Posts.vue";
+import Posts from "../components/strapi/Posts.vue";
 import PostDetail from "../components/strapi/PostDetail.vue";
 import AppStrapi from "../components/strapi/AppStrapi.vue";
 

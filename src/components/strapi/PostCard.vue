@@ -1,7 +1,5 @@
 <template>
-  <div
-    className="w-full overflow-hidden bg-gray-200 rounded-t-2xl xl:w-5/6 mb-4"
-  >
+  <div className="w-full overflow-hidden bg-gray-200 rounded-t-2xl mb-4">
     <router-link :to="`/post/${post.slug}`" class="no-underline">
       <div className="flex flex-col items-center justify-center ">
         <div className="mb-2">

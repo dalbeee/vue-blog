@@ -1,14 +1,12 @@
 <template>
-  <div
-    class="w-full gap-x-4 md:grid md:grid-cols-2 md:auto-rows-min lg:gap-x-8"
-  >
+  <div class="w-full gap-x-4 md:grid md:grid-cols-2 md:auto-rows-min">
     <postCard v-for="post in posts" :key="post.id" :post="post" />
   </div>
 </template>
 
 <script>
-import PostCard from "./strapi/PostCard.vue";
-import { getPosts, getCategoryPosts } from "../util/axios";
+import PostCard from "./PostCard.vue";
+import { getPosts, getCategoryPosts } from "../../util/axios";
 
 export default {
   name: "Posts",
