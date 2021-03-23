@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center">
     <div
-      class="py-4 text-gray-700 break-words markdown"
+      class="w-full py-4 text-gray-700 break-words markdown"
       h-auto
       v-html="content"
     ></div>
