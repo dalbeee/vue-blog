@@ -36,13 +36,10 @@
 <script>
 const regexStr = /(!\[.*\)\s)|(#\s)/g;
 
-const URL = import.meta.env.VITE_URL;
-
 export default {
   name: "PostCard",
   props: ["post"],
   computed: {
-    thumbnail: ({ post }) => post.thumbnail && `${URL}${post.thumbnail}`,
     parsedContent: ({ post }) => {
       return post.content
         .replace(regexStr, "")
