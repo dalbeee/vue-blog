@@ -12,11 +12,11 @@
 import { getPost } from "../../util/axios";
 import marked from "marked";
 
-const URL = import.meta.env.VITE_URL;
+// const URL = import.meta.env.VITE_URL;
 
-marked.setOptions({
-  baseUrl: URL,
-});
+// marked.setOptions({
+//   baseUrl: URL,
+// });
 
 export default {
   data: () => ({

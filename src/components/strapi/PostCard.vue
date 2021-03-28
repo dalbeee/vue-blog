@@ -4,8 +4,8 @@
       <div className="flex flex-col items-center justify-center ">
         <div className="mb-2">
           <img
-            v-if="thumbnail"
-            :src="thumbnail"
+            v-if="post.thumbnail"
+            :src="post.thumbnail"
             alt=""
             className="object-cover overflow-hidden w-full h-32"
           />
