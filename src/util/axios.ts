@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ICategory } from "..";
-const URL = import.meta.env.VITE_URL;
+const URL = import.meta.env.VITE_URL || "/api";
 
 export const getPost = async (slug: string) => {
   try {

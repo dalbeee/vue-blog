@@ -2,8 +2,11 @@ FROM node:alpine AS build
 RUN mkdir -p /app
 WORKDIR /app
 RUN npm init @vitejs/app . --template vue
+COPY package.json .
+RUN npm install
 COPY . .
-RUN npm install && npm run build
+RUN npm run build
+# CMD [ "npm", "run", "build" ]
 
 FROM nginx:1.19.8-alpine
 RUN mkdir -p /app
